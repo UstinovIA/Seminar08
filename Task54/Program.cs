@@ -43,11 +43,11 @@ void SortRowDesc(int[,] matrix, int row)
         isNotSorted = false;
         for (int i = 1; i < matrix.GetLength(1); i++)
         {
-            if(matrix[row, i] > matrix[row, i-1])
+            if (matrix[row, i] > matrix[row, i - 1])
             {
                 int temp = matrix[row, i];
-                matrix[row, i] = matrix[row, i-1];
-                matrix[row, i-1] = temp;
+                matrix[row, i] = matrix[row, i - 1];
+                matrix[row, i - 1] = temp;
                 isNotSorted = true;
             }
         }
@@ -56,13 +56,13 @@ void SortRowDesc(int[,] matrix, int row)
 
 void SortAllRowsDesc(int[,] matrix)
 {
-    for(int i = 0; i<matrix.GetLength(0); i++)
+    for (int i = 0; i < matrix.GetLength(0); i++)
     {
         SortRowDesc(matrix, i);
     }
 }
 
-int[,] arr2d = CreateMatrixRndInt(5,8,-20,20);
+int[,] arr2d = CreateMatrixRndInt(5, 8, -20, 20);
 Console.WriteLine("Массив до сортировки:");
 PrintMatrix(arr2d);
 SortAllRowsDesc(arr2d);
